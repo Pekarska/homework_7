@@ -1,0 +1,2 @@
+[console_scripts]
+sorting_files = clean_folder.my_project:main_sorting_fnct

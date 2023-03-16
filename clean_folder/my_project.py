@@ -4,9 +4,7 @@ import re
 import shutil
 import sys
 
-
-def sorting_files(path: Path):
-    global im, vi, doc, aud, arch
+def sorting_files(path:Path, im, vi, doc, aud, arch):
     images = ['.png', '.jpeg', '.svg', '.jpg', '.JPEG', '.PNG', '.JPG', '.SVG']
     videos = ['.avi', '.mp4', '.mov', '.mkv', '.AVI', '.MP4', '.MOV', '.MKV']
     documents = ['.doc', '.docx', '.txt', '.pdf', '.xlsx', '.pptx','.DOC', '.DOCX', '.TXT', '.PDF', '.XLSX', '.PPTX']
@@ -24,7 +22,7 @@ def sorting_files(path: Path):
                 print(f'Deleted emply folder: {new_path}')
                 continue
             else:
-                sorting_files(new_path)
+                sorting_files(new_path, im, vi, doc, aud, arch)
         elif i.suffix in images:
             shutil.move(new_path, im)
             print(f"Move image '{new_path}' to folder {im.name}")
@@ -136,18 +134,16 @@ def unzip(folder:Path):
         print(f"Unzipped {name_folder} to {a}")
 
 
-im = None
-doc = None
-aud = None
-vi = None
-arch = None
+def main_sorting_fnct():
+    im = None
+    doc = None
+    aud = None
+    vi = None
+    arch = None
 
-if __name__ == "__main__":
     folder_for_parse = sys.argv[1]
     path = Path(folder_for_parse)
  
-
-
     images_folder = folder_for_parse + '/images'
     im = Path(images_folder)
     im.mkdir(exist_ok=True)
@@ -176,10 +172,12 @@ if __name__ == "__main__":
     arch.mkdir(exist_ok=True)
     print('Created archives folder')
 
-    sorting_files(path)
+    sorting_files(path, im, vi, doc, aud, arch)
 
     unzip(arch)
 
     print("Program is complited")
 
 
+if __name__ == "__main__":
+    main_sorting_fnct()

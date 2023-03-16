@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: cleaner-project
+Version: 1.0.4
+Summary: Helps to clean folders
+Home-page: https://github.com/Pekarska/homework_6
+Author: Anna Pekarska
+License: MIT license
+License-File: LICENSE
+
+This module helps to sort files to the appropriate folders.Contains folders for images, videos, documents, audios, archives

@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+clean_folder/__init__.py
+clean_folder/my_project.py
+cleaner_project.egg-info/PKG-INFO
+cleaner_project.egg-info/SOURCES.txt
+cleaner_project.egg-info/dependency_links.txt
+cleaner_project.egg-info/entry_points.txt
+cleaner_project.egg-info/top_level.txt

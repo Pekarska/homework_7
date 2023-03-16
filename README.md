@@ -1,0 +1,1 @@
+This module helps to sort files to the appropriate folders. Contains folders for images, videos, documents, audios, archives
